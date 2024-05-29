@@ -16,8 +16,8 @@ public class Part2_EasyKanban {
     int taskDuration = 0;
     public static void main(String [] args)
     {        
-        POE2_ST10443481 main = new POE2_ST10443481();
-        main.OptionMenu();
+        Part2_EasyKanban main = new Part2_EasyKanban();
+        main.MenuMain();
     }  
     
     public void MenuMain(){
@@ -50,7 +50,7 @@ public class Part2_EasyKanban {
     public void AddTask()
     {
         
-        Tasks task = new Tasks();
+        Task1 task = new Task1();
         
         //Enter numbers of tasks
         String no_Task = "1";
@@ -75,7 +75,7 @@ public class Part2_EasyKanban {
             String devLast = JOptionPane.showInputDialog("Please enter the Developer's Last Name.");  
             
             // Duration of Task
-            String TaskDur = "1";
+            String TaskDur = "";
             TaskDur = task.NumericValid(no_Task,"Enter estimated duration of the task in hours.");
             
             taskDuration = task.returnTotalHours(taskDuration,Integer.parseInt(TaskDur));
@@ -87,14 +87,16 @@ public class Part2_EasyKanban {
                 status = JOptionPane.showInputDialog(null,"Please select one of the numbers below to show the status of the task." +
                 "\n1.To Do\n2.Done\n3.Doing");
                 
-                if(status.equals("1")){
-                    taskStatus = "To Do";}
-                    else if (status.equals("2")){
-                        taskStatus = "Done";}
-                        else if (status.equals("3")){
-                            taskStatus = "Doing";}
-                            else {
-                                JOptionPane.showMessageDialog(null,"Invalid Choice. Please choose one of the provided options.");}    
+                if(!status.equals("1"))
+                     if (status.equals("2")){
+                    taskStatus = "Done";}
+                else if (status.equals("3")){
+                    taskStatus = "Doing";}
+                else {
+                    JOptionPane.showMessageDialog(null,"Invalid Choice. Please choose one of the provided options.");}
+                    else {
+                    taskStatus = "To Do";    
+                }    
             }
              
             
@@ -107,10 +109,10 @@ public class Part2_EasyKanban {
             
             //Task Count
             taskCount++;
-        }
-        
+        }    
+    }
       //System.out.println("Total Duration of All Tasks: " + taskDuration + "hrs");
     }
-} 
+ 
    
-}
+
