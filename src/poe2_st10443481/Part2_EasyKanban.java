@@ -23,7 +23,7 @@ public class Part2_EasyKanban {
     public void MenuMain(){
         String sOption = "";
         JOptionPane.showMessageDialog(null,"Welcome to EasyKanban");
-        
+    //JOptionPane that shows the 3 choices and what happens if an invalid option is picked
         while(!(sOption.equals("3")))
         {
             sOption = JOptionPane.showInputDialog(null,"Please select of the numbers below" +
@@ -50,18 +50,18 @@ public class Part2_EasyKanban {
     public void AddTask()
     {
         
-        Task1 task = new Task1();
+       Task1 task = new Task1();
         
         //Enter numbers of tasks
         String no_Task = "1";
-        no_Task = task.NumericValid(no_Task,"How many tasks do you wish to enter?");
+        no_Task = task.NumValid(no_Task,"How many tasks do you wish to enter?");
               
         //For loop to collect Task Data
         for (int i= 0; i < Integer.parseInt(no_Task); i++){
             
             String taskName = JOptionPane.showInputDialog("Please enter name Task that is to be performed");
             
-            // Description  
+            // Description of task
             String taskDescript = JOptionPane.showInputDialog("Please enter a task description of less than 50 characters.");
             
             while(task.checkTaskDescription(taskDescript) == false){
@@ -74,13 +74,13 @@ public class Part2_EasyKanban {
             String devFirst = JOptionPane.showInputDialog("Please enter the Developer's First Name.");
             String devLast = JOptionPane.showInputDialog("Please enter the Developer's Last Name.");  
             
-            // Duration of Task
-            String TaskDur = "";
-            TaskDur = task.NumericValid(no_Task,"Enter estimated duration of the task in hours.");
+            // Duration of Task in hours
+            String TaskDur;
+            TaskDur = task.NumValid(no_Task,"Enter estimated duration of the task in hours.");
             
             taskDuration = task.returnTotalHours(taskDuration,Integer.parseInt(TaskDur));
             
-            // Task Status
+            // Task Status = to do, doing or done
             String taskStatus = "";
             String status = "";
             while (!(status.equals("1") || status.equals("2")|| status.equals("3"))){
@@ -100,7 +100,7 @@ public class Part2_EasyKanban {
             }
              
             
-            // Print Task Details          
+            // Print Task Details         
             JOptionPane.showMessageDialog(  null,   task.printTaskDetails(taskStatus,(devFirst + " " + devLast),taskCount
             ,taskName,taskDescript,(  task.createTaskID(taskName, taskCount, devFirst)    ),Integer.parseInt(TaskDur)) + 
             "\n\nTotal Duration of All Tasks: " + taskDuration + "hrs");
@@ -109,10 +109,10 @@ public class Part2_EasyKanban {
             
             //Task Count
             taskCount++;
-        }    
+            
     }
       //System.out.println("Total Duration of All Tasks: " + taskDuration + "hrs");
     }
- 
-   
+}
+ 
 

@@ -8,18 +8,18 @@ import javax.swing.JOptionPane;
  *
  * @author lab_services_student
  */
-public class Task1 {
 
-
-public class Tasks
+public class Task1
 {
     // Validates that description is less than 50 characters
     public boolean checkTaskDescription(String D1)
     {
         boolean Description = true;
-        if (D1.length() > 50 ){
-            Description = false;
-        }
+        if (D1.length() < 50 ){
+            System.out.println("Task successfully captured");
+        }else 
+            System.out.println("Task failed");
+        
         return Description;
     }   
     
@@ -48,7 +48,7 @@ public class Tasks
     
       //Validate any Numeric String
       //Additional personal validation 
-    public String NumericValid(String input,String display){
+    public String NumValid(String input,String display){
         boolean test = false;
         while(!test){
             test = true;   
@@ -66,6 +66,5 @@ public class Tasks
     }
 }
 
-}
     
 
