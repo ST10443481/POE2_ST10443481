@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class Part2_EasyKanban {
     
-    int taskCount = 0;
-    int taskDuration = 0;
+    int taskCount = 0; // taskCount (variable) is initialized to zero
+    int taskDuration = 0; // taskDuration (variable) is initialzed to zero
     public static void main(String [] args)
     {        
         Part2_EasyKanban main = new Part2_EasyKanban();
@@ -22,14 +22,14 @@ public class Part2_EasyKanban {
     
     public void MenuMain(){
         String sOption = "";
-        JOptionPane.showMessageDialog(null,"Welcome to EasyKanban");
-    //JOptionPane that shows the 3 choices and what happens if an invalid option is picked
+        JOptionPane.showMessageDialog(null,"Welcome to EasyKanban"); 
+//JOptionPane that shows the 3 choices and what happens if an invalid option is picked
         while(!(sOption.equals("3")))
         {
             sOption = JOptionPane.showInputDialog(null,"Please select of the numbers below" +
             "\nOption 1)Add task\nOption 2)Show report\nOption 3)Quit");
             
-            switch(sOption)
+            switch(sOption) //Switch to execute the code block when a certain condition is met (one of the "menu" options is chosen).
             {
               case "1": 
                   AddTask();
@@ -47,7 +47,7 @@ public class Part2_EasyKanban {
         }
     }
     
-    public void AddTask()
+    public void AddTask() //declatarion for AddTask method
     {
         
        Task1 task = new Task1();
@@ -57,7 +57,7 @@ public class Part2_EasyKanban {
         no_Task = task.NumValid(no_Task,"How many tasks do you wish to enter?");
               
         //For loop to collect Task Data
-        for (int i= 0; i < Integer.parseInt(no_Task); i++){
+        for (int i= 0; i < Integer.parseInt(no_Task); i++){ // Try to parse the input as an integer
             
             String taskName = JOptionPane.showInputDialog("Please enter name Task that is to be performed");
             
@@ -100,14 +100,14 @@ public class Part2_EasyKanban {
             }
              
             
-            // Print Task Details         
+            // Display Task Details         
             JOptionPane.showMessageDialog(  null,   task.printTaskDetails(taskStatus,(devFirst + " " + devLast),taskCount
             ,taskName,taskDescript,(  task.createTaskID(taskName, taskCount, devFirst)    ),Integer.parseInt(TaskDur)) + 
             "\n\nTotal Duration of All Tasks: " + taskDuration + "hrs");
             
             
             
-            //Task Count
+            //Task Count/Amount of tasks
             taskCount++;
             
     }
