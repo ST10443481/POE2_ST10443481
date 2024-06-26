@@ -46,6 +46,7 @@ public class Part2_EasyKanban {
                   break;
               case "2": 
             //Part 3
+            // initializing the array      
             int arrayCount = 1;
             devArr = new String[arrayCount];
             tasknArr = new String[arrayCount];
@@ -53,12 +54,12 @@ public class Part2_EasyKanban {
             durArr = new int[arrayCount];
             statusArr = new String[arrayCount];
             
-            boolean bloop = false;
+            boolean variable = false;
             
             if (taskDuration > 0)
-               {bloop = true;}
+               {variable = true;}
             
-            while (bloop) {
+            while (variable) {
                   String search = "";
                   String[] options = { "Done Task", "Longest Task", "Search a Task", "Search Developer's Task", "Delete Task", "Display Report","Exit" };
            
@@ -98,10 +99,10 @@ public class Part2_EasyKanban {
                 JOptionPane.showMessageDialog( null,test.displayReport(arrayCount, devArr, tasknArr, durArr, statusArr, taskIDArr));
             }
             if (selection == 6) {
-                bloop = false;
+                variable = false;
             }
             }
-            if (!bloop && taskDuration == 0) {
+            if (!variable && taskDuration == 0) {
                 JOptionPane.showMessageDialog( null,"Please Add Tasks first and then come back.");
             }
                   break;

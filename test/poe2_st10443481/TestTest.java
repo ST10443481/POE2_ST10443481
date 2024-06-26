@@ -16,10 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  */
 public class TestTest {
     
-    public TestTest() 
-    {
-      Test test = new Test();   
-    }
+    poe2_st10443481.Test test = new poe2_st10443481.Test();   
 
     @Test
     public void testDoneTask() {
@@ -76,7 +73,7 @@ public class TestTest {
         String[] taskStatuses = {"To Do", "Doing", "Done", "To Do"};
 
         String expected = "Tasks by: Mike Smith\nTask: Create Login\nStatus: To Do";
-        String result = test.searchDeveloper("Mike Smith", 4, taskNames, developers, taskStatuses);
+        String result = test.searchDev("Mike Smith", 4, taskNames, developers, taskStatuses);
 
         assertEquals(expected, result);
         System.out.println(expected);
