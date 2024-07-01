@@ -64,7 +64,7 @@ public class Part2_EasyKanban {
                   String[] options = { "Done Task", "Longest Task", "Search a Task", "Search Developer's Task", "Delete Task", "Display Report","Exit" };
            
                 int selection = JOptionPane.showOptionDialog(null, "Select one of options below:", "",0, 3, null, options, options[0]);
-            //https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Javas-JOptionPane-showOptionDialog-by-Example
+            
           
             if (selection == 0) {
             //Tasks with the status "Done"
